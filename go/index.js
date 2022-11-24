@@ -10,11 +10,15 @@ WebAssembly.instantiateStreaming(fetch("wasm.wasm"), importObject).then(
 );
 
 function measureTime(times, func) {
-    console.log("start measuring time")
-    console.time("measureTime")
+    document.writeln("<div>measure time START</div>")
+
+    let start = performance.now()
+    let tick = performance.now()
     for (let i = 0; i < times; i++) {
         func()
-        console.timeLog("measureTime", i)
+        document.writeln("<div>" + "measure time tick " + String(i) + " :> " + String(Math.round(performance.now() - tick)) + "ms" + "</div>")
+        tick = performance.now()
     }
-    console.timeEnd("measureTime")
+    let total = performance.now() - start
+    document.writeln("<div>" + "measure time END, average:> " + Math.round(total / times) + "ms" + "</div>")
 }
