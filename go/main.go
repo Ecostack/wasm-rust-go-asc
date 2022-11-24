@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	<-make(chan bool)
 }
 
 //export testSort
