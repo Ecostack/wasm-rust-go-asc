@@ -10,15 +10,21 @@ import (
 func main() {
 }
 
+type SortInt []int
+
+func (c SortInt) Len() int           { return len(c) }
+func (c SortInt) Swap(i, j int)      { c[i], c[j] = c[j], c[i] }
+func (c SortInt) Less(i, j int) bool { return c[i] < c[j] }
+
 //export testSort
 func testSort() {
-	arr := make([]int, 100_000)
+	arr := make(SortInt, 100_000)
 	for _i := range arr {
 		arr[_i] = rand.Intn(100)
 	}
-	temp := make([]int, len(arr))
+	temp := make(SortInt, len(arr))
 	for _i := 0; _i < 500; _i++ {
-		copy(temp, arr)
-		sort.Ints(temp)
+        copy(temp, arr)
+        sort.Stable(temp)
 	}
 }
