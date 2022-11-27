@@ -1,5 +1,5 @@
+use rand::prelude::*;
 use wasm_bindgen::prelude::*;
-use rand::{prelude::*};
 
 #[global_allocator]
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
