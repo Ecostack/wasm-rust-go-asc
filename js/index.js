@@ -13,11 +13,12 @@ function measureTime(times, func) {
 }
 
 function testSort() {
-    const arr = new Array(100_000)
+    const length = 100_000
+    const arr = new Array(length)
     for (let i = 0; i < arr.length; i++) {
         arr[i] = Math.random()
     }
-    const temp = new Array(100_000)
+    const temp = new Array(length)
     for (let i = 0; i < 500; i++) {
         for (let j = 0; j < arr.length; j++) {
             temp[j] = arr[j]

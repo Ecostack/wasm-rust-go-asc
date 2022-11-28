@@ -1,9 +1,6 @@
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::throw_str;
 
-
-mod utils;
-
 #[wasm_bindgen]
 extern "C" {
     // Use `js_namespace` here to bind `console.log(..)` instead of just
@@ -42,12 +39,12 @@ extern {
 #[wasm_bindgen]
 pub fn testSort() {
     const length: usize = 100_000;
-    let mut arr: [u8; length] = [0; length];
+    let mut arr: [i32; length] = [0; length];
     for i in 0..arr.len() {
         arr[i] = rand::random()
     }
 
-    let mut temp: [u8; length] = [0; length];
+    let mut temp: [i32; length] = [0; length];
     for _i in 0..500 {
         temp = arr.clone();
         temp.sort()
