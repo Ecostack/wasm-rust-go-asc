@@ -23,7 +23,7 @@ function testSort() {
         for (let j = 0; j < arr.length; j++) {
             temp[j] = arr[j]
         }
-        temp.sort()
+        temp.sort((a, b) => a - b)
     }
 }
 
