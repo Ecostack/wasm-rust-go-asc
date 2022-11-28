@@ -16,7 +16,7 @@ function testSort() {
     const length = 100_000
     const arr = new Array(length)
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = Math.random()
+        arr[i] = Math.random() * 100 | 0
     }
     const temp = new Array(length)
     for (let i = 0; i < 500; i++) {
@@ -27,4 +27,4 @@ function testSort() {
     }
 }
 
-measureTime(5, () => testSort())
+measureTime(5, testSort)
