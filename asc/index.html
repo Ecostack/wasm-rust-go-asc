@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
 <script type="module">
+
 import { testSort } from "./build/release.js";
 
-measureTime(5,() => testSort())
+measureTime(5, testSort)
 
 function measureTime(times, func) {
     document.writeln("<div>measure time START</div>")

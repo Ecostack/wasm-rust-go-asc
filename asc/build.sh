@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-npm instal && npm run asbuild
+npm install && npm run asbuild

@@ -4,8 +4,7 @@ const importObject = go.importObject;
 WebAssembly.instantiateStreaming(fetch("wasm.wasm"), importObject).then(
     (results) => {
         go.run(results.instance);
-
-        measureTime(5, () => results.instance.exports.testSort())
+        measureTime(5, results.instance.exports.testSort)
     }
 );
 

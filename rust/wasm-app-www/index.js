@@ -1,7 +1,6 @@
 import * as wasm from "wasm-zkpp";
 
-
-measureTime(5,()=>wasm.testSort())
+measureTime(5, wasm.testSort)
 
 function measureTime(times, func) {
     document.writeln("<div>measure time START</div>")
