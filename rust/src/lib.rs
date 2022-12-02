@@ -46,7 +46,9 @@ pub fn testSort() {
 
     let mut temp: [i32; length] = [0; length];
     for _i in 0..500 {
-        temp = arr.clone();
+        for j in 0..length {
+            temp[j] = arr[j]
+        }
         temp.sort()
     }
 }

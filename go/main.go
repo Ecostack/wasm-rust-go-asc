@@ -18,13 +18,16 @@ func (c SortInt) Less(i, j int) bool { return c[i] < c[j] }
 
 //export testSort
 func testSort() {
-	arr := make(SortInt, 100_000)
+    length := 100_000
+	arr := make(SortInt, length)
 	for _i := range arr {
 		arr[_i] = int32(rand.Intn(100))
 	}
-	temp := make(SortInt, len(arr))
+	temp := make(SortInt, length)
 	for _i := 0; _i < 500; _i++ {
-        copy(temp, arr)
+	    for j := 0; j < length; j++ {
+            temp[j] = arr[j]
+        }
         sort.Stable(temp)
 	}
 }
